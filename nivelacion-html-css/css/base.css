@@ -1,0 +1,116 @@
+body {
+  background-color:  rgb(163, 67, 231);
+  color: rgb(64, 57, 66);
+}
+header{
+  background-color: blueviolet;
+  font-size: 3em;
+  text-align: center;
+  color: plum;
+  padding: 30px;
+}
+footer{
+  background-color: blueviolet;
+  font-size: 13pt;
+  text-align: center;
+  color: plum;
+  padding: 10px;
+  clear: both;
+}
+nav{
+  background-color: mediumpurple;
+  height: 40px;
+  position: sticky;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+nav li {
+  float: left;
+  padding-left: 20px;
+}
+nav li a{
+  text-decoration: none;
+}
+main{
+  clear: both;
+}
+h1 {
+  font-size: 2em;
+  padding-right: 10pt;
+  padding-left: 10pt;
+}
+h2 {
+  font-size: 1.75em;
+  padding-right: 10pt;
+  padding-left: 10pt;
+}
+h3 {
+  font-size: 1.5em;
+  padding-right: 10pt;
+  padding-left: 10pt;
+}
+p {
+  font-family: verdana;
+  font-size: 16px;
+  text-align: justify;
+  padding-right: 10pt;
+  padding-left: 10pt;
+}
+#div1 {
+  width: 150px;
+  border: 2px solid darkmagenta;
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  float: left;
+}
+a{
+  color: plum;
+}
+a:hover{
+  background-color: plum;
+  color: darkmagenta;
+}
+a:active {
+  background-color: darkmagenta;
+  color: plum;
+}
+#two-columns {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+} 
+#three-columns {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+} 
+.cuerpo{
+  background-color: plum; 
+}
+.cuerpo p{
+  margin-left: 150px;
+}
+.cuerpo ul {
+  list-style-type: circle;
+}
+.cuerpo li{
+  clear: both;
+  margin-left: 150px;
+}
+.cuerpo ol{
+  list-style-type: lower-roman;
+}
+.cuerpo li a {
+  color: darkmagenta;
+}
+.cuerpo li a:hover {
+  color: darkgoldenrod
+}
+
+
