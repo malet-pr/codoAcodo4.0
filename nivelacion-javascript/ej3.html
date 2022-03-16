@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,12 +29,12 @@
         document.getElementById('number').addEventListener('change',process2);
         document.getElementById('buttonClean').addEventListener('click',process3);
         function process1() {
-            let len = document.getElementById('name').value.length;
+            let len = document.getElementById('name').value.replace(/\s/g, "").length;
             alert("Tu nombre tiene " + len + " letras");            
         }
         function process2() {
             let name = document.getElementById('name').value
-            let len = name.length;
+            let len = name.replace(/\s/g, "").length;
             let val = parseInt(document.getElementById('number').value) ;
             alert("La cantidad de letras que tiene tu nombre más el número que ingresaste da: " + (len+val));
             if(len+val >= 15){

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,6 +62,9 @@
                 document.getElementById('result1').innerHTML = "Su salario base es " + formatter.format(35560.20) +
                                                                 " pero tiene un descuento del 11%";
                 document.getElementById('result2').innerHTML = "Su salario final es " + formatter.format(w);
+            } else {
+                document.getElementById('result1').innerHTML = "Debe elegir una categoría";
+                document.getElementById('result2').innerHTML = "";
             }
         }
         var formatter = new Intl.NumberFormat('es-AR', {

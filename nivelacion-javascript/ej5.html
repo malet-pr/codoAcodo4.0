@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +43,7 @@
         }
         e.onclick = function(){
             var nombre = prompt ("Ingrese su nombre", "");
-            document.getElementById('out3').innerHTML = "Hola " + nombre + ", tu nombre tiene " + nombre.length + " letras";
+            document.getElementById('out3').innerHTML = "Hola " + nombre + ", tu nombre tiene " + nombre.replace(/\s/g, "").length + " letras";
         }
 
 
