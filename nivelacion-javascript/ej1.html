@@ -36,6 +36,10 @@
         document.getElementById('buttonSend').addEventListener('click',process1);
         document.getElementById('buttonClean').addEventListener('click',process2);
         function process1() {
+            if (!document.querySelector('input[type="radio"]:checked')) {
+                alert("Debe elegir una categoría");
+                return;
+            }
             let categories = document.querySelectorAll('input[type="radio"]');
             categories.forEach(c =>{
                 if(c.checked){
@@ -44,7 +48,9 @@
             })
         }
         function process2() {
-            document.querySelector('input[type="radio"]:checked').checked = false;
+            if(document.querySelector('input[type="radio"]:checked')){
+                document.querySelector('input[type="radio"]:checked').checked = false;
+            }
             document.getElementById('result1').innerHTML = "";
             document.getElementById('result2').innerHTML = "";
         }
@@ -62,10 +68,7 @@
                 document.getElementById('result1').innerHTML = "Su salario base es " + formatter.format(35560.20) +
                                                                 " pero tiene un descuento del 11%";
                 document.getElementById('result2').innerHTML = "Su salario final es " + formatter.format(w);
-            } else {
-                document.getElementById('result1').innerHTML = "Debe elegir una categoría";
-                document.getElementById('result2').innerHTML = "";
-            }
+            } 
         }
         var formatter = new Intl.NumberFormat('es-AR', {
             style: 'currency',
