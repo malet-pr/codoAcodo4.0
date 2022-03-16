@@ -14,7 +14,7 @@
         <input type="text" id="name" name="name" placeholder="nombre"> 
         <br>
         <label for="number">Escriba un número:</label>
-        <input type="text" id="number" name="number" placeholder="0"> 
+        <input type="text" id="number" class="edit-items" name="number" placeholder="0"> 
         </h3>
     </form>
     <p>
@@ -46,6 +46,11 @@
         function process3(){
             document.getElementById('name').value = "";
             document.getElementById('number').value = "";
+        }
+        document.getElementsByClassName('edit-items')[0].oninput = function () {
+            if (parseInt(this.value) < 0) {
+                this.value = 0; 
+            }
         }
     </script>
 
