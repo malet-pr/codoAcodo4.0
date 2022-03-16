@@ -30,11 +30,16 @@
         document.getElementById('buttonClean').addEventListener('click',process3);
         function process1() {
             let len = document.getElementById('name').value.replace(/\s/g, "").length;
-            alert("Tu nombre tiene " + len + " letras");            
+            alert("Tu nombre tiene " + len + " letras");        
         }
         function process2() {
             let name = document.getElementById('name').value
             let len = name.replace(/\s/g, "").length;
+            if (isNaN(document.getElementById('number').value)) {
+                alert("Debe ingresar un número");
+                document.getElementById('number').value = "";
+                return;
+            }
             let val = parseInt(document.getElementById('number').value) ;
             alert("La cantidad de letras que tiene tu nombre más el número que ingresaste da: " + (len+val));
             if(len+val >= 15){
