@@ -7,9 +7,47 @@
     <title>Document</title>
 </head>
 <body>
+
+    <form>
+        <h3>
+        <label for="name">Ingrese su nombre:</label>
+        <input type="text" id="name" name="name" placeholder="nombre"> 
+        <br>
+        <label for="quantity">Escriba un número:</label>
+        <input type="text" id="number" name="number" placeholder="0"> 
+        </h3>
+    </form>
+    <p>
+        <button id="buttonClean" style="margin-left: 100px; font-size: 20px;">Limpiar</button>
+    </p>
+
     <a href="index.html">VOLVER</a>
 
 
+    <script type="text/javascript">
+        document.getElementById('name').addEventListener('change',process1);
+        document.getElementById('number').addEventListener('change',process2);
+        document.getElementById('buttonClean').addEventListener('click',process3);
+        function process1() {
+            let len = document.getElementById('name').value.length;
+            alert("Tu nombre tiene " + len + " letras");            
+        }
+        function process2() {
+            let name = document.getElementById('name').value
+            let len = name.length;
+            let val = parseInt(document.getElementById('number').value) ;
+            alert("La cantidad de letras que tiene tu nombre más el número que ingresaste da: " + (len+val));
+            if(len+val >= 15){
+                alert(name + ", la cuenta total es mayor o igual a 15");
+            } else {
+                alert(name + ", la cuenta total es menor a 15");
+            }
+        }
+        function process3(){
+            document.getElementById('name').value = "";
+            document.getElementById('number').value = "";
+        }
+    </script>
 
 
 </body>
@@ -21,7 +59,8 @@
 // mostrar un alerta que le diga la cantidad de letras que tiene su nombre
 
 // que el usuario/a ingrese un numero
-// mostrar un alerta que le diga la cantidad de letras que tiene tu nombre + el numero que ingresaste da como resultado
+// mostrar un alerta que le diga la cantidad de letras que tiene tu nombre + el numero que ingresaste da 
+// como resultado
 
 // si el resultado >=15
 // responder en un alert (nombre) en un alerta la cuenta total es mayor a 15 caracteres
