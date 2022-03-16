@@ -11,7 +11,7 @@
     <form>
         <h3>
         <label for="quantity">Indique una cantidad:</label>
-        <input type="number" min="0" id="quantity" name="quantity" placeholder="0"> 
+        <input type="number" min="0" class="edit-items" id="quantity" name="quantity" placeholder="0"> 
         </h3>
     </form>
     <p>
@@ -36,6 +36,11 @@
         }
         function process2() {
             document.getElementById('quantity').value = 0;
+        }
+        document.getElementsByClassName('edit-items')[0].oninput = function () {
+            if (this.value < this.min) {
+                this.value = this.min; 
+            }
         }
     </script>
 
