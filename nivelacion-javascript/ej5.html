@@ -4,13 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>javascript practice 5</title>
 </head>
 <body>
+    <h2> EJERCICIO 5 </h2>
+    <h3> SELECCIONE UN PROGRAMA</h3>
+        <button id="a">Programa 1</button>
+        <br><br>
+        <button id="b">Programa 2</button>
+        <br><br>
+        <label for="number">Escriba un número:</label>
+        <input type="text" id="number" name="number" placeholder="0"> 
+        <p id="out1"></p>
+        <button id="d">Programa 4</button>
+        <p id="out2"></p>
+        <button id="e">Programa 5</button>
+        <p id="out3"></p>
+
+        <p>
+            <button id="buttonClean" style="margin-left: 50px; font-size: 20px;">Limpiar</button>
+        </p>
     <a href="index.html">VOLVER</a>
 
+    <script type="text/javascript">
+        a.onclick = function(){alert("Hello Arbi")};
+
+        b.onclick = function(){document.write(
+            "Hello Arbi" + "<br><br>" +
+            "<a href='ej5.html'>VOLVER</a>"
+        )};
+
+        number.onchange = function(){
+            document.getElementById('out1').innerHTML = parseInt(document.getElementById('number').value) + 3;
+        }
+        d.onclick = function(){
+            var nombre = prompt ("Ingrese su nombre", "");
+            document.getElementById('out2').innerHTML = "Hola " + nombre;
+        }
+        e.onclick = function(){
+            var nombre = prompt ("Ingrese su nombre", "");
+            document.getElementById('out3').innerHTML = "Hola " + nombre + ", tu nombre tiene " + nombre.length + " letras";
+        }
 
 
+        document.getElementById('buttonClean').addEventListener('click',clean);
+        function clean() {
+            document.getElementById('number').value = 0;
+            document.getElementById('out1').innerHTML = "";
+            document.getElementById('out2').innerHTML = "";
+            document.getElementById('out3').innerHTML = "";
+        }
+
+    </script>
 
 </body>
 </html>
