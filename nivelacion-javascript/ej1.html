@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript practice 1</title>
+</head>
+<body>
+    <header> <h2> EJERCICIO 1 </h2></header>
+    <main>
+        <h3> Seleccione su categoría</h3>
+        <form id="category">
+            <p>
+                <input type="radio" id="re" name="cat" value="repositor">
+                <label for="win">Repositor</label>
+                <input type="radio" id="ca" name="cat" value="cajero">
+                <label for="mac">Cajero</label>
+                <input type="radio" id="su" name="cat" value="supervisor">
+                <label for="lin">Supervisor</label>
+            </p>
+        </form>
+        <p>
+            <button id="buttonSend" style="margin-left: 30px; font-size: 20px;">Enviar</button>
+            <button id="buttonClean" style="margin-left: 50px; font-size: 20px;">Limpiar</button>
+        </p>
+        
+        <p id="result1"></p>
+        <p id="result2"></p>
+
+        <h4><a href="index.html"  style="margin-left: 100px;">VOLVER</a></h4>
+
+    </main>
+
+    <script >
+        document.getElementById('buttonSend').addEventListener('click',process1);
+        document.getElementById('buttonClean').addEventListener('click',process2);
+        function process1() {
+            let categories = document.querySelectorAll('input[type="radio"]');
+            categories.forEach(c =>{
+                if(c.checked){
+                    calculateWage(c.value);
+                }
+            })
+        }
+        function process2() {
+            document.querySelector('input[type="radio"]:checked').checked = false;
+            document.getElementById('result1').innerHTML = "";
+            document.getElementById('result2').innerHTML = "";
+        }
+        function calculateWage(value){
+            if(value=="repositor") {
+                let w = 15890 * 1.1;
+                document.getElementById('result1').innerHTML = "Su salario base es " + formatter.format(15890) +
+                                                                " y tiene un bono del 10%";
+                document.getElementById('result2').innerHTML = "Su salario final es " + formatter.format(w);
+            } else if(value=="cajero") {
+                document.getElementById('result1').innerHTML = "Su salario final es " + formatter.format(25630.89);
+                document.getElementById('result2').innerHTML = "";
+            } else if(value=="supervisor") {
+                let w = 35560.20 * 0.89;
+                document.getElementById('result1').innerHTML = "Su salario base es " + formatter.format(35560.20) +
+                                                                " pero tiene un descuento del 11%";
+                document.getElementById('result2').innerHTML = "Su salario final es " + formatter.format(w);
+            }
+        }
+        var formatter = new Intl.NumberFormat('es-AR', {
+            style: 'currency',
+            currency: 'ARS',
+        });
+    </script>
+</body>
+</html>
+
+<!--
+1. Una pequeña despensa desea calcular los sueldos de sus empleados.
+ Los puestosde los mismos pueden tener 3 categorías: 1- repositor, 2-cajero y 3-supervisor.
+a- Los repositores cobran $15.890 + un bono de 10%.
+b- Los cajeros cobran $25.630,89 fijos.
+c- Los supervisores cobran $35.560,20 en bruto al cual se les descuenta un 11%
+de jubilación.
+Se necesita un programa que, dependiendo el tipo de empleado del que se trate,
+calcule y muestre en pantalla el correspondiente sueldo.
+-->
+
