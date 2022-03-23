@@ -24,13 +24,13 @@ p, a, ul, li, ol, td, input, button {
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(245, 245, 255);
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     border: .5px solid rgb(199, 198, 198);
     border-radius: 4px;
 }
 
 button {
-    padding: .5rem .75rem;
+    padding: .25rem .50rem;
     background-color: rgb(19, 114, 117);
     color: white;
     border-radius: 4px;
