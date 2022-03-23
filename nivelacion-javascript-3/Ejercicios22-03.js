@@ -43,7 +43,7 @@ console.log(Math.floor(Math.random() *(7-5+1)+5));
 //nombre.length;
 function getRandomLetter(name){
     let len = name.length;
-    let number = Math.floor(Math.random() * (len-1));
+    let number = Math.floor(Math.random() * (len));
     return name.charAt(number);
 }
 console.log(getRandomLetter("Nuria"));
