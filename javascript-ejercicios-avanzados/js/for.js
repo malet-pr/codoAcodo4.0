@@ -9,7 +9,8 @@
 666666 */
 
 //Ejercicio
-/* 2. Haz un script que escriba una pirámide inversa de los números del 1 al número que indique el usuario de la siguiente forma : (suponiendo que indica 30).
+/* 2. Haz un script que escriba una pirámide inversa de los números del 1 al número que indique el usuario de 
+la siguiente forma : (suponiendo que indica 30).
 
 303030303030303030303030303030303030303030303030303030303030
 2929292929292929292929292929292929292929292929292929292929
@@ -19,7 +20,8 @@
 22 */
 
 //Ejercicio
-/* 3. Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario (no mayor de 50) :
+/* 3. Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario 
+(no mayor de 50) :
 
 1
 12
@@ -29,7 +31,8 @@
 123456
  */
 //Ejercicio
-/* 4. Un script que escriba los números del 1 al 500, que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal. Por ejemplo :
+/* 4. Un script que escriba los números del 1 al 500, que indique cuales son múltiplos de 4 y de 9 y que 
+cada 5 líneas muestre una línea horizontal. Por ejemplo :
 
 1
 2
@@ -46,7 +49,9 @@
  */
 
 //Ejercicio
-/* 5. Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 35 al 1. */
+/* 5. Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro cada una de las 
+celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 
+los números irán del 35 al 1. */
 
 
 
