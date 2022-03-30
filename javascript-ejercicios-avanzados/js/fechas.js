@@ -38,14 +38,22 @@ function process2(){
 
 function process3(){
     let yearText = prompt ("Ingrese el año", "");
+    if(!validateNumber(yearText)) {
+        alert("El año debe ser un número entero");
+        return;
+    }
     let monthText = prompt ("Ingrese el mes", "");
+    if (!validateNumber(monthText)) {
+        alert("El mes debe ser un número entero");
+        return;
+    } 
     const date = new Date();
     date.setFullYear(parseInt(yearText),parseInt(monthText)-1,1);
     document.getElementById('out3').innerHTML = months[parseInt(monthText)-1] + " - " + parseInt(yearText);
-    document.getElementById('out4').innerHTML = getCallendar(date);
+    document.getElementById('out4').innerHTML = getCalendar(date);
 }
 
-function getCallendar(originalDate){
+function getCalendar(originalDate){
     let result = [];
     for(i = 1; i <= getLastDay(originalDate); i++){
         let date = new Date();
@@ -58,4 +66,11 @@ function getCallendar(originalDate){
 function getLastDay(date){
     date.setMonth(date.getMonth() + 1, 0);
     return date.getDate();
+}
+
+function validateNumber(text){
+    if (isNaN(parseInt(text))) {
+        return false;
+    } 
+    return true;
 }
