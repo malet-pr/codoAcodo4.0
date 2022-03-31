@@ -12,6 +12,7 @@ console.log(newText);
 
 /* 2. Realiza un script que cuente el número de vocales que tiene un texto. */
 
+// sin regex
 const vowels = ['a','e','i','o','u'];
 let text2 = prompt("Escriba otro texto: ");
 let str = text2.toLowerCase().split(" ");
@@ -25,12 +26,18 @@ for(let i=0;i<str.length;i++){
 }
 console.log(count);
 
+// con regex
+const pattern = /[aeiou]/gi;
+let text3 = prompt("Escriba otro texto: ");
+console.log(text3.match(pattern).length);
+
+
 
 /* 3. Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, 
 si tecleo “hola que tal” deberá mostrar “lat euq aloh”. */
 
-let text3 = prompt("Escriba un nuevo texto: ");
-console.log(text3.split("").reverse().join(""));
+let text4 = prompt("Escriba un nuevo texto: ");
+console.log(text4.split("").reverse().join(""));
 
 /* 4. Realiza un juego de Piedra Papel Tijera contra Gana ARBI. */
 
@@ -50,7 +57,7 @@ while(choice.toLowerCase() != "salir"){
             console.log("piedra");
             break;
         default:
-            console.log("tiene que elegir una de las opciones: piedra, papel o tijera");
+            console.log("tiene que escribir una opcion (o salir para terminar): piedra, papel, tijera");
     }
     choice = prompt("¿Piedra, papel o tijera? : ");
 } 
