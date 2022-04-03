@@ -6,4 +6,6 @@ Ejercicios del curso
 2. [nivelación javascript 1](/nivelacion-javascript-1)
 3. [nivelación javascript 2](/nivelacion-javascript-2)
 4. [nivelación javascript 3](/nivelacion-javascript-3)
-5. [ejercicios avanzados javascript](/javascript-ejercicios-avanzados)
+5. [nivelación javascript avanzada](/nivelacion-javascript-avanzada)
+6. [nivelación frontend](/nivelacion-front-end)
+7. [nivelación javascript POO](/nivelacion-javascript-poo)
