@@ -1,0 +1,36 @@
+header {
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height:5rem;
+    text-align:center; 
+    padding:1em; 
+    color:bisque;
+}
+main {
+    background-color:bisque;
+    padding: 0.5rem;
+}
+main h1, h2, h3, h4 {
+    font-family: 'Lato';
+}
+main p, a, ul, li, ol, td, input, button {
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+main section {
+    padding-top: 1em;
+	scroll-margin-top: 9rem; /* mediaquery 20rem */
+}
+main section .accordion-item {
+    background-color: bisque;
+}
+main section .accordion-header {
+    background-color: burlywood;
+    padding:5px;
+    margin: 5px;
+}
+main section .accordion-body{
+    background-color:bisque;
+    padding: 0.5rem;
+}
