@@ -34,5 +34,11 @@ main section .accordion-body{
     background-color:bisque;
     padding: 0.5rem;
 }
-
-
+footer{
+    background-color: burlywood;
+    min-height: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 1rem;
+    color: black;
+}
