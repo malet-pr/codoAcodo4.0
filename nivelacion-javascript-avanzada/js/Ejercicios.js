@@ -37,7 +37,7 @@ function validateString(val) {
     if (val == ""){
         return false;
     }
-    return false;
+    return true;
 }
  
 
