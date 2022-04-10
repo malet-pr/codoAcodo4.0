@@ -105,10 +105,60 @@ function getPerimeter(option) {
 }
 
 
-
-
 //19 - Que pase de Kg a otra unidad de medida de masa, mostrar en pantalla un menú con las opciones posibles.
 
+document.getElementById('weight').addEventListener('change',getWeight);
 
+let w;
+function getWeight(){
+    let wText = document.getElementById("weight").value;
+    console.log(wText);
+    if(!validateFloat(wText)){
+        alert("El peso tiene que ser un número");
+        clean();
+    } 
+    w = parseFloat(wText);  
+    console.log(w);
+    if(w<0){
+        alert("el peso no puede ser negativo");
+        clean();
+    }
+}
+
+function select(){
+    let select = document.getElementById('unit');
+    let option = select.options[select.selectedIndex];
+    let converted = convert(w,option.value);
+    if(!isNaN(converted) && converted != null){
+        document.getElementById('converted').innerHTML = `El peso ingresado equivale a ${converted} ${option.text}` ;
+    } else {
+        clean();
+    }
+}
+
+function convert(w,un){
+    let converted;
+    switch (un){
+        case 'gr':
+            converted = w*1000;
+            break;
+        case 'ton':
+            converted = w/1000;
+            break;
+        case 'pound':
+            converted = w * 2.20462;
+            break;
+        default:
+            alert('Debe elegir una unidad');
+    }
+    return converted;
+}
+
+clean = () => {
+    document.getElementById("weight").value = "";
+    document.getElementById('converted').innerHTML = "";
+    let select = document.getElementById('unit');
+    select.options.selectedIndex = 0;
+}
 
 

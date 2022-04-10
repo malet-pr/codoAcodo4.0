@@ -55,7 +55,30 @@
 
         <div id="tabs-3">
             <p>Que pase de Kg a otra unidad de medida de masa, mostrar en pantalla un menú con las opciones posibles</p>
-
+            <div class="row align-items-center" style="margin-top:2rem;">
+                <div class="col-4">
+                    <p style="text-align:center;">
+                        <label for="weight">Peso a convertir</label><br>
+                        <input type="text" id="weight" name="weight" default="0"> 
+                    </p>
+                </div>
+                <div class="col-2">
+                    <select id="unit" onChange="select()">
+                        <option value="nothing">Convertir a</option>
+                        <option value="gr">Gramos</option>
+                        <option value="ton">Toneladas</option>
+                        <option value="pound">Libras</option>
+                    </select>
+                    <br><br>
+                    <button id="clean" onclick="clean()" style="float:center;">Borrar</button>
+                </div>
+                <div class="col-6">
+                    <p style="float:left; text-align:center;">
+                        <label for="converted">Peso convertido</label><br>
+                        <textarea id="converted" name="converted" rows="2" cols="50"></textarea>
+                    </p>
+                </div>
+            </div>
         </div>
 
       </div>
