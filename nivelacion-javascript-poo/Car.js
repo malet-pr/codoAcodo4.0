@@ -1,8 +1,6 @@
 class Car {
     "use stric";
 
-    constructor(){}
-
     constructor(cantidadRuedas,cantidadPuertas,marcaDestino,probado = false) {
         this.cantidadRuedas = cantidadRuedas;
         this.cantidadPuertas = cantidadPuertas;
@@ -26,7 +24,7 @@ class Car {
     setTipoCarroceria(cantidadPuertas){
         if(cantidadPuertas < 4){
             this.tipoCarroceria = 'chica';
-        } else if (cantidadPuertas > 3 && car.cantidadPuertas < 6){
+        } else if (cantidadPuertas > 3 && cantidadPuertas < 6){
             this.tipoCarroceria = 'mediana';
         } else {
             this.tipoCarroceria = 'grande';
@@ -152,14 +150,16 @@ class Car {
             status = 'es apto';
             }
         }
-        retrun
-        `El auto tiene ruedas: ${this.cantidadRuedas!=null ? this.cantidadRuedas : "desconocida"}, 
+        let str = `El auto tiene ruedas: ${this.cantidadRuedas!=null ? this.cantidadRuedas : "desconocida"}, 
             puertas: ${this.cantidadPuertas!=null ? this.cantidadPuertas : "desconocida"},
             carrocería: ${this.tipoCarroceria!=null ? this.tipoCarroceria : "desconocida"},
             su modelo es: ${this.modelo!=null ? this.modelo : "desconocido"},
             se fabricó para la marca: ${this.marcaDestino!=null ? this.marcaDestino : "desconocida"},
             su costo de fabricación es: ${this.costoFabricacion!=null ? this.costoFabricacion : "desconocido"}.
             El auto ${status}.`;
+        return str;
     }
 
 }
+
+module.exports = Car;
