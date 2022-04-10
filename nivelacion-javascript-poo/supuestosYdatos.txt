@@ -1,0 +1,25 @@
+## RUEDAS
+2,4,5
+(no lo dice pero parece lo más lógico para moto, auto y camioneta)
+
+## PUERTAS
+0, 3 ó 5, 5 ó 7
+(no lo dice, pero parece lo más lógico para moto, auto y camioneta)
+
+## CARROCERÍA
+chica, mediana, grande
+(no lo dice el problema pero : 0 ó 3 -> chica, 5 -> mediana, 7 -> grande)
+
+## MODELO (basado en cantidad de ruedas)
+moto (2 ruedas), auto (4 ruedas), camioneta (5 ruedas)
+
+## MARCA DESTINO
+Ford, Fiat, BW, Audi
+
+## COSTO DE FABRICACIÓN (basado en carrocería)
+50000 + 5000 si chica 
+50000^2 + 85000 si mediana
+(50000^2 + 85000)*5 + 180000 si grande
+
+((50000^2 + 85000)*5 + 180000) + 70000 si alta gama
+
