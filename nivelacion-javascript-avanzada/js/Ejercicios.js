@@ -1,7 +1,7 @@
 //Ejercicios
 
 "use strict";
-const prompt = require('prompt-sync')({sigint:true});
+const prompt = require('prompt-sync')({sigint:true});  // descomentar para correr con node
 
 function validateInt(text){
     if (isNaN(parseInt(text))) {
@@ -292,16 +292,22 @@ if((x5%2 == 0) && (y5%2 == 0)) {
     console.log('Un número es par y el otro impar');
 }
 
-// TODO: completar 13,18,19,20 y 21
-
-/* 	
+/* ESTAN EN UN ARCHIVO APARTE PARA MOSTRARLOS POR PANTALLA
 13 - Que muestre un menú que contemple las opciones “Archivo”, “Buscar”, y “Salir”, en caso de que no se introduzca 
     una opción correcta se notificará por pantalla.
 18 - Que muestre un menú donde las opciones sean “Equilátero”, “Isósceles” y “Escaleno”, pida una opción y calcule 
     perímetro del triángulo seleccionado.
 19 - Que pase de Kg a otra unidad de medida de masa, mostrar en pantalla un menú con las opciones posibles.
+*/
+
+/*
 20 - Que lea un importe en bruto y calcule su importe neto, si es mayor de 15.000 se le aplicara un 16% de impuestos, 
     en caso contrario se aplicara un 10%.
+*/
+
+
+
+/*
 21 - Que calcule el sueldo que le corresponde al trabajador de una empresa que cobra 80.000 pesos anuales, el programa 
     debe realizar los cálculos en función de los siguientes criterios: 
 a)	Si lleva más de 10 años en la empresa se le aplica un aumento del 10%.
@@ -309,6 +315,8 @@ b)	Si lleva menos de 10 años, pero más que 5 se le aplica un aumento del 7%.
 c)	Si lleva menos de 5 años, pero más que 3 se le aplica un aumento del 5%.
 d)	Si lleva menos de 3 se le aplica un aumento del 3%.
 */
+
+
 
 /*
 22 – Primer Juego: hacer un programa donde declaremos una variable de tipo entero y la iniciamos con un valor entre 

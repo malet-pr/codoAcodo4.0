@@ -6,11 +6,11 @@
 }
 body {
     margin: 0 2rem;
-    background-color: rgb(236, 236, 236);
+    background-color: slateblue;
 }
 h1, h2, h3, h4 {
     font-family: 'Lato';
-    color: rgb(42, 41, 43);
+    color: white;
 }
 p, a, ul, li, ol, td, input, button {
     font-family: 'Montserrat';
@@ -19,26 +19,49 @@ p, a, ul, li, ol, td, input, button {
 .center {
     text-align: center;
 }
-.container {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(245, 245, 255);
-    padding: 1rem 2rem;
-    border: .5px solid rgb(199, 198, 198);
-    border-radius: 4px;
-}
 
 button {
     padding: .5rem .75rem;
-    background-color: rgb(19, 114, 117);
-    color: white;
+    background-color: lightgray;
+    color: black;
+    font-weight: 500;
     border-radius: 4px;
     border: none;
-    margin: 0 auto;
     display: block;
+}
+button:hover{
+    background-color: darkgrey;
+    color: white;
     transition: background-color .2s ease;
 }
-button:hover {
-    background-color: rgb(14, 59, 61);
+.message {
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+    height:150px;
+    font-weight: 700;
+    background-color: blue;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.ui-widget{
+    color:black;
+}
+.ui-widget-header{
+    background-color: blue;
+}
+.ui-widget-content{
+    min-height: 55vh;
+    background-color: lightskyblue;
+    color: black;
+}
+.ui-widget-header .ui-state-default{
+    background-color: lightskyblue;
+    border-color: black;
+}
+.ui-widget-header .ui-state-active{
+    background-color: blue;
+    border-color: black;
 }

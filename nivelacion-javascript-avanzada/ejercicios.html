@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <title>Ejercicios javascript avanzados</title>
+</head>
+<body>
+    <h2 class="center">EJERCICIOS AVANZADOS</h2>
+
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Ejercicio 13</a></li>
+            <li><a href="#tabs-2">Ejercicio 18</a></li>
+            <li><a href="#tabs-3">Ejercicio 19</a></li>
+        </ul>
+
+        <div id="tabs-1">
+            <p>Que muestre un menú que contemple las opciones “Archivo”, “Buscar”, y “Salir”, en caso de que no se introduzca 
+            una opción correcta se notificará por pantalla.</p>
+            <label for="action">Elija una acción a realizar</label>
+            <select id="action" onChange="update()">
+                <option disabled selected value value="none">Acción</option>
+                <option value="file">Archivo</option>
+                <option value="search">Buscar</option>
+                <option value="exit">Salir</option>
+                <option value="error">Ninguna</option>
+            </select>
+            <br><br><br>
+            <div class="message" id="msg">
+            </div>
+        </div>
+
+        <div id="tabs-2">
+            <p>Que muestre un menú donde las opciones sean “Equilátero”, “Isósceles” y “Escaleno”, pida una opción y calcule 
+            perímetro del triángulo seleccionado.</p>
+            <p>Elija un tipo de triángulo: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="eq" name="triangle" value="eq">
+                <label for="eq">Equilátero</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="is" name="triangle" value="is">
+                <label for="is">Isósceles</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="sc" name="triangle" value="sc">
+                <label for="sc">Escaleno</label> 
+                <button id="triangle" onclick="pick()" style="float:right;">Calcular</button>
+            </p>
+            <br>
+            <div class="message" id="msg2">
+            </div>
+        </div>
+
+        <div id="tabs-3">
+            <p>Que pase de Kg a otra unidad de medida de masa, mostrar en pantalla un menú con las opciones posibles</p>
+
+        </div>
+
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>   
+    <script src="js/ej2.js"></script>
+</body>
+</html>
+
