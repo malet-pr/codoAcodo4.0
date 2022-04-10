@@ -46,53 +46,77 @@ class Car {
     encenderMotor(test){
         if(test == true){
             console.log('Se encendió el motor');
+        } else {
+            console.log('No se encendió el motor');
         }
         return test;
     }
     apagarMotor(test){
         if(test == true){
             console.log('Se apagó el motor');
+        } else {
+            console.log('No se apagó el motor');
         }
         return test;
     }
     mover(test){
         if(test == true){
-            console.log('El auto está en movimiento');
+            console.log('El auto se puso en movimiento');
+        } else {
+            console.log('El auto no se puso en movimiento');
         }
         return test;
     }
     frenar(test){
         if(test == true){
             console.log('El auto frenó');
+        } else {
+            console.log('El auto no frenó');
         }
         return test;
     }
     acelerar(test){
         if(test == true){
             console.log('El auto aceleró de 0 a 50');
+        } else {
+            console.log('El auto no aceleró de 0 a 50');
         }
         return test;
     }
     encenderLuces(test){
         if(test == truetrue){
             console.log('Se encendieron las luces');
+        } else {
+            console.log('No se encendieron las luces');
         }
         return test;
     }
     apagarLuces(test) {
         if(test == true){
             console.log('Se apagaron las luces');
+        } else {
+            console.log('No se apagaron las luces');
         }
         return test;
     }
     tocarBocina(test){
         if(test == true){
             console.log('Sonó la bocina');
+        } else {
+            console.log('No sonó la bocina');
         }
         return test;
     }
     
     probarAuto(){
+        this.encenderMotor(test);
+        this.apagarMotor(test);
+        this.mover(test);
+        this.frenar(test);
+        this.acelerar(test);
+        this.encenderLuces(test);
+        this.apagarLuces(test);
+        this.tocarBocina(test);
         this.probado = true;
         if(this.encenderMotor(test) && this.apagarMotor(test) && this.mover(test) && this.frenar(test) && 
             this.acelerar(test) && this.encenderLuces(test) && this.apagarLuces(test) && this.tocarBocina(test)){

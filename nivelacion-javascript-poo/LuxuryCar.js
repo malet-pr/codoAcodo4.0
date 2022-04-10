@@ -1,18 +1,31 @@
 class LuxuryCarr extends Car{
 
-    constructor(cantidadRuedas,cantidadPuertas,tipoCarroceria,modelo,marcaDestino,costoFabricacion,apto,
-         techoCorredizo, asientoCuero, patenteLujo, equipado) {
-        super(cantidadRuedas,cantidadPuertas,tipoCarroceria,modelo,marcaDestino,costoFabricacion,apto);
+    constructor(cantidadRuedas,cantidadPuertas,marcaDestino,techoCorredizo, asientoCuero,probado=false) {
+        super(cantidadRuedas,cantidadPuertas,marcaDestino,probado);
         this.techoCorredizo = techoCorredizo;
         this.asientoCuero = asientoCuero;
-        this.patenteLujo = patenteLujo;
-        this.equipado = equipado;
+        this.setCostoFabricacion();
+        this.setEquipado();
     }
 
-    //TODO: completar los métodos
+    setCostoFabricacion(){
+        this.costoFabricacion = ((50000^2 + 85000)*5 + 180000) + 70000;
+    }
 
-    toString(){}
+    setEquipado(){
+        if(this.techoCorredizo == true && this.asientoCuero == true){
+            this.equipado = true;
+        }
+        this.equipado = false;
+    }
 
-    probarAuto(){}
+    toString(){
+        if(equipado){
+            return super(this) + ' El auto está equipado.';
+        } else {
+            return super(this) + ' El auto no está equipado.';
+        }
+    }
+
 
 }
