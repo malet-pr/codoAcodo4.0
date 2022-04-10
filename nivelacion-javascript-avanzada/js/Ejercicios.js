@@ -1,7 +1,7 @@
 //Ejercicios
 
 "use strict";
-const prompt = require('prompt-sync')({sigint:true});  // descomentar para correr con node
+const prompt = require('prompt-sync')({sigint:true});  
 
 function validateInt(text){
     if (isNaN(parseInt(text))) {
@@ -304,7 +304,18 @@ if((x5%2 == 0) && (y5%2 == 0)) {
 20 - Que lea un importe en bruto y calcule su importe neto, si es mayor de 15.000 se le aplicara un 16% de impuestos, 
     en caso contrario se aplicara un 10%.
 */
-
+let m;
+let mText = prompt('Ingrese un importe bruto: ');
+if(!validateFloat(mText)) {
+    console.error('Usted no ha ingresado un número');
+} else {
+    m = parseFloat(mText);
+}
+let adjX = x => {
+    if(x>15000) return x*(1-.16);
+    else return x*(1-.1);
+}
+console.log(`El importe neto es ${adjX(m)}`)
 
 
 /*
@@ -315,8 +326,18 @@ b)	Si lleva menos de 10 años, pero más que 5 se le aplica un aumento del 7%.
 c)	Si lleva menos de 5 años, pero más que 3 se le aplica un aumento del 5%.
 d)	Si lleva menos de 3 se le aplica un aumento del 3%.
 */
-
-
+let wage = 80000;
+console.log(`Cálculo del sueldo anual de un trabajador que gana ${wage} pesos anuales, considerando antigüedad.`);
+let adjustedWage = (wage,seniority) => {
+    if(seniority >= 10) return wage*1.10;
+    else if(seniority >= 5 && seniority < 10) return wage*1.07;
+    else if(seniority >= 3 && seniority < 5) return wage*1.05;
+    else return wage*1.03;
+}
+console.log(`El sueldo ajustado con 12 años de antigüedad es de ${adjustedWage(wage,12)} pesos anuales.`);
+console.log(`El sueldo ajustado con 7 años de antigüedad es de ${adjustedWage(wage,7)} pesos anuales.`);
+console.log(`El sueldo ajustado con 4 años de antigüedad es de ${adjustedWage(wage,4)} pesos anuales.`);
+console.log(`El sueldo ajustado con 2 años de antigüedad es de ${adjustedWage(wage,2)} pesos anuales.`);
 
 /*
 22 – Primer Juego: hacer un programa donde declaremos una variable de tipo entero y la iniciamos con un valor entre 
