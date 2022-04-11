@@ -1,10 +1,13 @@
+"use strict";
+const prompt = require('prompt-sync')({sigint:true});  
 const car = require('./Car.js');
+
 class LuxuryCar extends car{
 
-    constructor(cantidadRuedas,cantidadPuertas,marcaDestino,techoCorredizo, asientoCuero,probado=false) {
+    constructor(cantidadRuedas,cantidadPuertas,marcaDestino,probado=false) {
         super(cantidadRuedas,cantidadPuertas,marcaDestino,probado);
-        this.techoCorredizo = techoCorredizo;
-        this.asientoCuero = asientoCuero;
+        this.techoCorredizo = true;
+        this.asientoCuero = true;
         this.setCostoFabricacion();
     }
 
@@ -19,11 +22,21 @@ class LuxuryCar extends car{
         return false;
     }
 
-    toString(test){
+    getInfo(){
+        let info = super.getInfo();
+        info.techoCorredizo = true;
+        info.asientoCuero = true;
+        info.luxury = true;
+        return info;
+    }
+
+    toString(){
         if(this.checkEquipado()){
-            return super.toString() +' El auto está equipado.';
+            return super.toString() +
+            '\n            Equipado con techo corredizo y con asientos de cuero reforzado.';
         } else {
-            return super.toString() +' El auto no está equipado.';
+            return super.toString() +
+            '\n            Equipado con techo corredizo ni con asientos de cuero reforzado.';
         }
     }
 

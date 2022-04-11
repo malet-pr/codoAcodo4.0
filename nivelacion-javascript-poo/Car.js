@@ -1,5 +1,6 @@
+"use strict";
+const prompt = require('prompt-sync')({sigint:true});  
 class Car {
-    "use stric";
 
     constructor(cantidadRuedas,cantidadPuertas,marcaDestino,probado = false) {
         this.cantidadRuedas = cantidadRuedas;
@@ -41,105 +42,83 @@ class Car {
         }
     }
 
-    encenderMotor(test){
-        if(test == true){
-            console.log('Se encendió el motor');
-        } else {
-            console.log('No se encendió el motor');
-        }
-        return test;
+    validateInput(text){
+        let reg = /^[sS]$/           
+        if (reg.test(text)) return true;
+        return false;
     }
-    apagarMotor(test){
-        if(test == true){
-            console.log('Se apagó el motor');
-        } else {
-            console.log('No se apagó el motor');
-        }
-        return test;
+
+    encenderMotor(){
+        let tr = prompt(`¿Se enciende el motor? (s,S,n,N): `);
+        return this.validateInput(tr);
     }
-    mover(test){
-        if(test == true){
-            console.log('El auto se puso en movimiento');
-        } else {
-            console.log('El auto no se puso en movimiento');
-        }
-        return test;
+    apagarMotor(){
+        let tr = prompt(`¿Se apaga el motor? (s,S,n,N): `);
+        return this.validateInput(tr);      
     }
-    frenar(test){
-        if(test == true){
-            console.log('El auto frenó');
-        } else {
-            console.log('El auto no frenó');
-        }
-        return test;
+    mover(){
+        let tr = prompt(`¿Se mueve el auto? (s,S,n,N): `);
+        return this.validateInput(tr);  
     }
-    acelerar(test){
-        if(test == true){
-            console.log('El auto aceleró de 0 a 50');
-        } else {
-            console.log('El auto no aceleró de 0 a 50');
-        }
-        return test;
+    frenar(){
+        let tr = prompt(`¿Frena el auto? (s,S,n,N): `);
+        return this.validateInput(tr);    
     }
-    encenderLuces(test){
-        if(test == truetrue){
-            console.log('Se encendieron las luces');
-        } else {
-            console.log('No se encendieron las luces');
-        }
-        return test;
+    acelerar(){
+        let tr = prompt(`¿Acelera el auto de 0 a 50? (s,S,n,N): `);
+        return this.validateInput(tr);    
     }
-    apagarLuces(test) {
-        if(test == true){
-            console.log('Se apagaron las luces');
-        } else {
-            console.log('No se apagaron las luces');
-        }
-        return test;
+    encenderLuces(){
+        let tr = prompt(`¿Se encienden las luces? (s,S,n,N): `);
+        return this.validateInput(tr);   
     }
-    tocarBocina(test){
-        if(test == true){
-            console.log('Sonó la bocina');
-        } else {
-            console.log('No sonó la bocina');
-        }
-        return test;
+    apagarLuces() {
+        let tr = prompt(`¿Se apagan las luces? (s,S,n,N): `);
+        return this.validateInput(tr);   
     }
-    
+    tocarBocina(){
+        let tr = prompt(`¿Suena la bocina? (s,S,n,N): `);
+        return this.validateInput(tr);    
+    }
+
     probarAuto(){
-        this.encenderMotor(test);
-        this.apagarMotor(test);
-        this.mover(test);
-        this.frenar(test);
-        this.acelerar(test);
-        this.encenderLuces(test);
-        this.apagarLuces(test);
-        this.tocarBocina(test);
-        this.probado = true;
-        if(this.encenderMotor(test) && this.apagarMotor(test) && this.mover(test) && this.frenar(test) && 
-            this.acelerar(test) && this.encenderLuces(test) && this.apagarLuces(test) && this.tocarBocina(test)){
+        let x1 = this.encenderMotor();
+        let x2 = this.apagarMotor();
+        let x3 = this.mover();
+        let x4 = this.frenar();
+        let x5 = this.acelerar();
+        let x6 = this.encenderLuces();
+        let x7 = this.apagarLuces();
+        let x8 = this.tocarBocina();
+        if(x1 && x2 && x3 && x4 && x5 && x6 && x7 && x8){
             this.apto = true;
         } else {
             this.apto = false;
         }
+        this.probado = true;
+        console.log(`De acuerdo a las pruebas realizadas, el auto es ${this.apto==true ? "apto." : "no apto."}`)
     }
 
-    listarAutos(arrCars){
-        let result = [];
-        for(let car in arrCars){
-            result.push(`${car}: es modelo ${car.modelo}, para la marca ${car.marcaDestino},
-                        y tiene carrocería ${car.tipoCarroceria}.`);
-        }
-        return result;
+    carList = [];
+
+    agregarAuto(carList){
+        carList.push(`${this.modelo} para la marca ${this.marcaDestino} con carrocería ${this.tipoCarroceria}.`);
     }
 
-    agregarAuto(car,carList){
-        listaAutos.push(`${car}: es modelo ${car.modelo}, para la marca ${car.marcaDestino},
-                        y tiene carrocería ${car.tipoCarroceria}.`);
-        return carList;
+    getInfo(){
+        return {
+            cantidadRuedas: this.cantidadRuedas,
+            cantidadPuertas: this.cantidadPuertas,
+            marcaDestino: this.marcaDestino,
+            modelo: this.modelo,
+            tipoCarroceria: this.tipoCarroceria,
+            costoFabricacion: this.costoFabricacion,
+            probado: this.probado,
+            apto:this.apto,
+        };
     }
-
-    toString(test){
+ 
+    toString(){
         let status;
         if(this.probado == false){
             status = 'no fue probado todavía';
