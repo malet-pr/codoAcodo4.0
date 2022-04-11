@@ -1,5 +1,4 @@
 "use strict";
-const prompt = require('prompt-sync')({sigint:true});  
 const car = require('./Car.js');
 
 class LuxuryCar extends car{
@@ -15,13 +14,6 @@ class LuxuryCar extends car{
         this.costoFabricacion = ((50000^2 + 85000)*5 + 180000) + 70000;
     }
 
-    checkEquipado(){
-        if(this.techoCorredizo == true && this.asientoCuero == true){
-            return true;
-        } 
-        return false;
-    }
-
     getInfo(){
         let info = super.getInfo();
         info.techoCorredizo = true;
@@ -31,13 +23,8 @@ class LuxuryCar extends car{
     }
 
     toString(){
-        if(this.checkEquipado()){
-            return super.toString() +
-            '\n            Equipado con techo corredizo y con asientos de cuero reforzado.';
-        } else {
-            return super.toString() +
-            '\n            Equipado con techo corredizo ni con asientos de cuero reforzado.';
-        }
+        return super.toString() +
+        '\n            Equipado con techo corredizo y con asientos de cuero reforzado.';
     }
 
 }
