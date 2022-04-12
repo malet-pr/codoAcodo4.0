@@ -1,5 +1,8 @@
 "use strict";
 const prompt = require('prompt-sync')({sigint:true});  
+
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
 class Car {
 
     constructor(cantidadRuedas,cantidadPuertas,marcaDestino,probado = false) {
@@ -10,6 +13,7 @@ class Car {
         this.setTipoCarroceria(cantidadPuertas);
         this.setCostoFabricacion(this.tipoCarroceria);
         this.probado = probado;
+        this.fabricado = new Date();
     }
 
     setModelo(cantidadRuedas){
@@ -113,6 +117,7 @@ class Car {
             modelo: this.modelo,
             tipoCarroceria: this.tipoCarroceria,
             costoFabricacion: this.costoFabricacion,
+            fabricado: this.fabricado,
             probado: this.probado,
             apto:this.apto,
         };
@@ -135,9 +140,16 @@ class Car {
             su modelo es: ${this.modelo!=null ? this.modelo : "desconocido"},
             se fabricó para la marca: ${this.marcaDestino!=null ? this.marcaDestino : "desconocida"},
             su costo de fabricación es: ${this.costoFabricacion!=null ? this.costoFabricacion : "desconocido"}.
-            El auto ${status}.`;
+            El auto fue fabricado el ${this.fabricado.toLocaleDateString('es-AR', options)}, a las ${this.fabricado.getHours()} horas ${this.fabricado.getMinutes()} minutos y  ${status}.`;
         return str;
     }
+
+    compareTo(other){
+        if(this.fabricado < other.fabricado) return -1;
+        if(this.fabricado > other.fabricado) return 1;
+        return 0;
+    }
+
 
 }
 

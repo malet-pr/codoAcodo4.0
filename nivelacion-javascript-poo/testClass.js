@@ -23,8 +23,15 @@ console.log('\n');
 
 console.log('Vehículos fabricados:');
 let lista = [];
-auto1.agregarAuto(lista);
 auto2.agregarAuto(lista);
+auto1.agregarAuto(lista);
 lista.forEach(a => console.log(a));
+
+console.log('\n');
+
+console.log('Prueba de métodos compareTo y sort');
+console.log(auto2.compareTo(auto1));
+console.log(lista.sort());
+
 
 console.log('\n------------------------------------------------------------------------\n');
