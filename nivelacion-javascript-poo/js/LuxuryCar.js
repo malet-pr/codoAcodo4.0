@@ -3,8 +3,8 @@ const car = require('./Car.js');
 
 class LuxuryCar extends car{
 
-    constructor(cantidadRuedas,cantidadPuertas,marcaDestino,probado=false) {
-        super(cantidadRuedas,cantidadPuertas,marcaDestino,probado);
+    constructor(cantidadRuedas,cantidadPuertas,marcaDestino) {
+        super(cantidadRuedas,cantidadPuertas,marcaDestino);
         this.techoCorredizo = true;
         this.asientoCuero = true;
         this.setCostoFabricacion();
@@ -24,7 +24,7 @@ class LuxuryCar extends car{
 
     toString(){
         return super.toString() +
-        '\n            Equipado con techo corredizo y con asientos de cuero reforzado.';
+        '\nEstá equipado con techo corredizo y con asientos de cuero reforzado.';
     }
 
 }

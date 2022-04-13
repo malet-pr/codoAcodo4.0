@@ -5,14 +5,14 @@ const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric
 
 class Car {
 
-    constructor(cantidadRuedas,cantidadPuertas,marcaDestino,probado = false) {
+    constructor(cantidadRuedas,cantidadPuertas,marcaDestino) {
         this.cantidadRuedas = cantidadRuedas;
         this.cantidadPuertas = cantidadPuertas;
         this.marcaDestino = marcaDestino;
         this.setModelo(cantidadRuedas);
         this.setTipoCarroceria(cantidadPuertas);
         this.setCostoFabricacion(this.tipoCarroceria);
-        this.probado = probado;
+        this.probado = false;
         this.fabricado = new Date();
     }
 
@@ -103,10 +103,23 @@ class Car {
         console.log(`De acuerdo a las pruebas realizadas, el auto es ${this.apto==true ? "apto." : "no apto."}`)
     }
 
+    probarAutoParaFront(encenderMotor,apagarMotor,mover,frenar,acelerar,encenderLuces,apagarLuces,tocarBocina){
+        if(encenderMotor && apagarMotor && mover && frenar && acelerar && encenderLuces && apagarLuces && tocarBocina){
+            this.aptu = true;
+        } else {
+            this.apto = false;
+        }
+        this.probado = true;
+    }
+
     carList = [];
 
     agregarAuto(carList){
         carList.push(`${this.modelo} para la marca ${this.marcaDestino} con carrocería ${this.tipoCarroceria}.`);
+    }
+
+    agregarAutoCompleto(carList){
+        carList.push(this);
     }
 
     getInfo(){
@@ -125,6 +138,7 @@ class Car {
  
     toString(){
         let status;
+        let p;
         if(this.probado == false){
             status = 'no fue probado todavía';
         } else {
@@ -134,13 +148,16 @@ class Car {
             status = 'es apto';
             }
         }
-        let str = `El auto tiene ruedas: ${this.cantidadRuedas!=null ? this.cantidadRuedas : "desconocida"}, 
-            puertas: ${this.cantidadPuertas!=null ? this.cantidadPuertas : "desconocida"},
-            carrocería: ${this.tipoCarroceria!=null ? this.tipoCarroceria : "desconocida"},
-            su modelo es: ${this.modelo!=null ? this.modelo : "desconocido"},
-            se fabricó para la marca: ${this.marcaDestino!=null ? this.marcaDestino : "desconocida"},
-            su costo de fabricación es: ${this.costoFabricacion!=null ? this.costoFabricacion : "desconocido"}.
-            El auto fue fabricado el ${this.fabricado.toLocaleDateString('es-AR', options)}, a las ${this.fabricado.getHours()} horas ${this.fabricado.getMinutes()} minutos y  ${status}.`;
+        let formatter = new Intl.NumberFormat('es-AR', {
+            style: 'currency',
+            currency: 'ARS',
+        });
+        if(this.costoFabricacion!=null) {
+            p = formatter.format(this.costoFabricacion) ;
+        }
+        let str = `Es un vehículo modelo ${this.modelo!=null ? this.modelo : "desconocido"}, tiene ${this.cantidadRuedas!=null ? this.cantidadRuedas : "desconocida"} ruedas, ${this.cantidadPuertas!=null ? this.cantidadPuertas : "desconocida"} puertas y carrocería ${this.tipoCarroceria!=null ? this.tipoCarroceria : "desconocida"}.
+Se fabricó para la marca ${this.marcaDestino!=null ? this.marcaDestino : "desconocida"} y su costo de fabricación es de ${this.costoFabricacion!=null ? p : "desconocido"}. 
+Fue fabricado el ${this.fabricado.toLocaleDateString('es-AR', options)}, a las ${this.fabricado.getHours()} horas ${this.fabricado.getMinutes()} minutos y ${status}.`;
         return str;
     }
 
@@ -149,6 +166,8 @@ class Car {
         if(this.fabricado > other.fabricado) return 1;
         return 0;
     }
+
+
 
 
 }

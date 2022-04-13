@@ -1,0 +1,82 @@
+
+
+:root {
+    box-sizing: border-box;
+    --primaryColor: green;
+    --primaryLight: lightgreen;
+    --primaryDark: darkgreen;
+    --secondaryColor: gray;
+    --accentColor: darkred;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0 2rem;
+    background-color: var(--primaryColor);
+}
+h1, h2 {
+    font-family: 'Lato';
+    color: white;
+}
+h3, h4, h5 {
+    font-family: 'Lato';
+    color: black;
+}
+p, a, ul, li, ol, td, input, button {
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+.center {
+    text-align: center;
+}
+
+button {
+    padding: .5rem .75rem;
+    background-color: var(--accentColor);
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    display: block;
+}
+button:hover{
+    background-color: var(--primaryColor);
+    font-weight: 300;
+    color: white;
+    transition: background-color .2s ease;
+}
+.ui-widget{
+    color:black;
+}
+.ui-widget-header{
+    background-color: var(--primaryDark);
+}
+.ui-widget-content{
+    min-height: 55vh;
+    background-color: var(--primaryLight);
+    color: black;
+}
+.ui-widget-header .ui-state-default{
+    background-color: var(--primaryLight);
+    border-color: var(--primaryDark);
+}
+.ui-widget-header .ui-state-active{
+    background-color: var(--accentColor);
+    border-color: var(--primaryDark);
+    color: black;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
+    background-color: var(--secondaryColor);
+    color: white;
+    padding: 1rem 2rem;
+    border: 3px solid var(--primaryDark);
+    border-radius: 4px;
+}
+#out{
+    font-weight: 600;
+    vertical-align: middle
+}

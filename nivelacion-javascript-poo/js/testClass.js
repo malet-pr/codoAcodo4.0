@@ -14,7 +14,7 @@ console.log(auto1.getInfo());       // para ver cambio de estado de no probado a
 console.log('\n');
 
 console.log('Segundo auto');
-let auto2 = new luxuryCar(5,7,'BW');
+let auto2 = new luxuryCar(5,7,'BMW');
 console.log(auto2.toString());
 auto2.probarAuto();
 console.log(auto2.getInfo());       // para ver cambio de estado de no probado a apto/no apto
