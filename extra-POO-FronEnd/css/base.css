@@ -80,3 +80,9 @@ button:hover{
     font-weight: 600;
     vertical-align: middle
 }
+#list{
+    color: black;
+}
+ol li{
+    cursor:pointer; 
+}

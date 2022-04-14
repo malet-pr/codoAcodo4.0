@@ -1,9 +1,11 @@
 "use strict";
 
 $(function() {$("#tabs").tabs();});
+$(function() {$("#tabs")>$("#tab-3")>$("#list")>$("li").tooltip();});
 
-var carListComplete = [];
-var carListShort = [];
+var carList = [];
+let n = 0;
+var v;
 
 function updateWheels(){
     let select = document.getElementById('wheels');
@@ -28,21 +30,16 @@ function createCar(){
     let d = updateDoors();
     let b = updateBrand();
     let checkedValues = $('input[name="extras"]:checked').map((i, el) => el.value).get();
-    let v;
     if(checkedValues.length==2){
         v = new LuxuryCar(w,d,b);
     } else {
         v = new Car(w,d,b);
     }
-    v.agregarAutoCompleto(carListComplete);
-    v.agregarAuto(carListShort);
+    v.agregarAuto(carList);
     document.getElementById('out').innerHTML = v.toString();
-    console.log(carListShort);
+    $("#tabs")>$("#tab-3")>$("#list").append(`<a href="#" title="${v.toString()}"><li>${carList[n]}</li></a>`);
+    n = n + 1;
 }
-
-document.getElementById('out2').innerHTML = carListShort;
-
-
 
 class Car {
 
@@ -123,6 +120,20 @@ class Car {
 Se fabricó para la marca ${this.marcaDestino} y su costo de fabricación es de ${formatter.format(this.costoFabricacion)}. 
 Fue fabricado el ${this.fabricado.toLocaleDateString('es-AR', options)}, a las ${this.fabricado.getHours()} horas ${this.fabricado.getMinutes()} minutos y ${status}.`;
         return str;
+    }
+
+    getInfo(){
+        return {
+            cantidadRuedas: this.cantidadRuedas,
+            cantidadPuertas: this.cantidadPuertas,
+            marcaDestino: this.marcaDestino,
+            modelo: this.modelo,
+            tipoCarroceria: this.tipoCarroceria,
+            costoFabricacion: this.costoFabricacion,
+            fabricado: this.fabricado,
+            probado: this.probado,
+            apto:this.apto,
+        };
     }
 
 }
