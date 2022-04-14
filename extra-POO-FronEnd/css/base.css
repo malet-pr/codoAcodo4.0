@@ -76,9 +76,20 @@ button:hover{
     border: 3px solid var(--primaryDark);
     border-radius: 4px;
 }
-#out{
+.tests {
+    max-width: fit-content;
+    background-color: var(--secondaryColor);
+    color: white;
+    padding: 1rem;
+    border: 3px solid var(--primaryDark);
+    border-radius: 4px;
+}
+#out1{
     font-weight: 600;
     vertical-align: middle
+}
+#out2{
+    font-weight: 600;
 }
 #list{
     color: black;

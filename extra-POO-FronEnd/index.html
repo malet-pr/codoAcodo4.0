@@ -50,7 +50,7 @@
             <div class="row align-items-center" style="margin-top:2rem;">
                 <div class="col-4 center">
                     <h5>EXRAS</h5>
-                    <div id="extras" style="text-align:center;">
+                    <div class=container id="extras" style="text-align:center;">
                         <input type="checkbox" id="roof" name="extras" value="roof">
                         <label for="roof">Techo Corredizo</label>
                         <br>
@@ -62,12 +62,61 @@
                     <button id="create" onclick="createCar()">FABRICAR</button>             
                 </div>
                 <div class="col-6 center">
-                    <p id="out"></p>
+                    <p id="out1"></p>
                 </div>
             </div>
         </div>
 
         <div id="tabs-2">
+            <h5 class="center"> PRUEBAS DE FUNCIONAMIENTO </h5>
+            <div class="row " style="margin-top:2rem;">
+                <div class="col-6">
+                    <label for="cars">Vehículo a probar</label> <br>
+                    <select id="cars" onChange="selectCar()">
+                    </select>
+                </div>
+                <div class="col-4"> 
+                    <form class="tests">
+                        <input type="checkbox" id="t1" name="test-item" value="t1">
+                        <label for="t1">Encender el motor</label>
+                        <br>
+                        <input type="checkbox" id="t2" name="test-item" value="t2">
+                        <label for="t2">Apagar el motor</label>
+                        <br>
+                        <input type="checkbox" id="t3" name="test-item" value="t3">
+                        <label for="t3">Poner el auto en movimiento</label>
+                        <br>
+                        <input type="checkbox" id="t4" name="test-item" value="t4">
+                        <label for="t4">Frenar el auto</label>
+                        <br>
+                        <input type="checkbox" id="t5" name="test-item" value="t5">
+                        <label for="t5">Acelerar de 0 a 50 km/h</label>
+                        <br>
+                        <input type="checkbox" id="t6" name="test-item" value="t6">
+                        <label for="t6">Enceder las luces</label>
+                        <br>
+                        <input type="checkbox" id="t7" name="test-item" value="t7">
+                        <label for="t7">Apagar las luces</label>
+                        <br>
+                        <input type="checkbox" id="t8" name="test-item" value="t8">
+                        <label for="t8">Tocar la bocina</label>
+                    </form>
+                    <br>
+                    <div class="row">
+                        <div class="col-4">
+                            <button id="check-all">Marcar todos</button>
+                        </div>
+                        <div class="col-4">
+                            <button id="uncheck-all">Borrar todos</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <p><button id="getResult" onclick="getResult()">Finalizar Pruebas</button></p> 
+                    <br>
+                    <p id="out2"></p>
+                </div>
+            </div>
 
         </div>
 

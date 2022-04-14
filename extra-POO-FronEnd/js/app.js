@@ -1,9 +1,10 @@
 "use strict";
 
 $(function() {$("#tabs").tabs();});
-$(function() {$("#tabs")>$("#tab-3")>$("#list")>$("li").tooltip();});
+$(function() {$("#tabs")>$("#tab-3")>$("#list")>$("li").tooltip()});
 
 var carList = [];
+var completeCarList = [];
 let n = 0;
 var v;
 
@@ -36,11 +37,47 @@ function createCar(){
         v = new Car(w,d,b);
     }
     v.agregarAuto(carList);
-    document.getElementById('out').innerHTML = v.toString();
-    $("#tabs")>$("#tab-3")>$("#list").append(`<a href="#" title="${v.toString()}"><li>${carList[n]}</li></a>`);
+    completeCarList.push(v);
+    document.getElementById('out1').innerHTML = v.toString();
+    $("#tabs")>$("#tab-3")>$("#list").append(`<a href="#" title="${v.toString()}"><li id=car${n}>${carList[n]}</li></a>`);
+    $('#cars').append($('<option>').val(n).text(String(n+1) + '-' + carList[n]));
     n = n + 1;
 }
 
+function selectCar(){
+    let select = document.getElementById('cars');
+    let option = select.options[select.selectedIndex].value;
+    return option;
+}
+
+function runTests(){
+    let checkedValues = $('input[name="test-item"]:checked').map((i, el) => el.value).get();
+    if(checkedValues.length==8){
+        return true;
+    } else {
+       return false;
+    }
+}
+
+function getResult(){
+    let ch = selectCar();
+    let car = completeCarList[ch];
+    let tests = runTests();
+    car.probarAuto(tests);
+    document.getElementById('out2').innerHTML = `${car.apto==true ? "El vehículo es apto." : "El vehículo no es apto."}`;
+    $(`#car${ch}`).prepend(`${car.apto==true ? "APTO: " : "NO APTO: "}`);
+    $(`#cars option[value=${ch}]`).attr("disabled","disabled");
+    $(`#cars option[value=${ch}]`).text('Test realizado - ' + carList[ch]);
+}
+
+$(function() {
+    $('#check-all').on('click', function() {
+      $('.tests input:checkbox').prop('checked', true);
+    });
+    $('#uncheck-all').on('click', function() {
+      $('.tests input:checkbox').prop('checked', false);
+    });
+});
 class Car {
 
     constructor(cantidadRuedas,cantidadPuertas,marcaDestino) {
@@ -50,7 +87,6 @@ class Car {
         this.setModelo(cantidadRuedas);
         this.setTipoCarroceria(cantidadPuertas);
         this.setCostoFabricacion(this.tipoCarroceria);
-        this.probado = false;
         this.fabricado = new Date();
     }
 
@@ -84,9 +120,9 @@ class Car {
         }
     }
 
-    probarAuto(encenderMotor,apagarMotor,mover,frenar,acelerar,encenderLuces,apagarLuces,tocarBocina){
-        if(encenderMotor && apagarMotor && mover && frenar && acelerar && encenderLuces && apagarLuces && tocarBocina){
-            this.aptu = true;
+    probarAuto(tests){
+        if(tests==true){
+            this.apto = true;
         } else {
             this.apto = false;
         }
@@ -102,15 +138,6 @@ class Car {
     toString(){
         let status;
         let p;
-        if(this.probado == false){
-            status = 'no fue probado todavía';
-        } else {
-            if(this.apto == false){
-                status = 'no es apto';
-            } else {
-            status = 'es apto';
-            }
-        }
         let formatter = new Intl.NumberFormat('es-AR', {
             style: 'currency',
             currency: 'ARS',
@@ -118,7 +145,7 @@ class Car {
         let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         let str = `Es un vehículo modelo ${this.modelo}, tiene ${this.cantidadRuedas}, ${this.cantidadPuertas} y carrocería ${this.tipoCarroceria}.
 Se fabricó para la marca ${this.marcaDestino} y su costo de fabricación es de ${formatter.format(this.costoFabricacion)}. 
-Fue fabricado el ${this.fabricado.toLocaleDateString('es-AR', options)}, a las ${this.fabricado.getHours()} horas ${this.fabricado.getMinutes()} minutos y ${status}.`;
+Fue fabricado el ${this.fabricado.toLocaleDateString('es-AR', options)}, a las ${this.fabricado.getHours()} horas ${this.fabricado.getMinutes()} minutos.`;
         return str;
     }
 
@@ -131,7 +158,6 @@ Fue fabricado el ${this.fabricado.toLocaleDateString('es-AR', options)}, a las $
             tipoCarroceria: this.tipoCarroceria,
             costoFabricacion: this.costoFabricacion,
             fabricado: this.fabricado,
-            probado: this.probado,
             apto:this.apto,
         };
     }
