@@ -9,4 +9,4 @@ Ejercicios del curso
 5. [nivelación javascript avanzada](/nivelacion-javascript-avanzada)
 6. [nivelación bootstrap](/nivelacion-bootstrap)
 7. [nivelación javascript POO](/nivelacion-javascript-poo)
-8. [extra POO con FrontEnd](/extra-POO-FrontEnd)
+8. [extra POO con FrontEnd](/extra-POO-FronEnd)
