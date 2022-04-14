@@ -22,7 +22,7 @@
         </ul>
 
         <div id="tabs-1">
-            <h5>CONFIGURACIÓN BASE</h5>
+            <h5 class="center">CONFIGURACIÓN BASE</h5>
             <div class="container">
                 <label for="wheels">Cantidad de ruedas</label>
                 <select id="wheels" onChange="updateWheels()">
@@ -31,16 +31,16 @@
                     <option value="five">cinco ruedas</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for="wheels">Cantidad de puertas</label>
-                <select id="wheels" onChange="updateDoors()">
+                <label for="doors">Cantidad de puertas</label>
+                <select id="doors" onChange="updateDoors()">
                     <option value="zero">sin puertas</option>
                     <option value="three">tres puertas</option>
                     <option value="four">cuatro puertas</option>
                     <option value="five">cinco puertas</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for="wheels">Marca destino</label>
-                <select id="wheels" onChange="updateBrand()">
+                <label for="brand">Marca destino</label>
+                <select id="brand" onChange="updateBrand()">
                     <option value="fiat">Fiat</option>
                     <option value="ford">Ford</option>
                     <option value="bmw">BMW</option>
@@ -50,21 +50,21 @@
             <div class="row align-items-center" style="margin-top:2rem;">
                 <div class="col-4 center">
                     <h5>EXRAS</h5>
-                    <p style="text-align:center;">
-                        <input type="checkbox" id="roof" name="roof" value="roof">
+                    <div id="extras" style="text-align:center;">
+                        <input type="checkbox" id="roof" name="extras" value="roof">
                         <label for="roof">Techo Corredizo</label>
                         <br>
-                        <input type="checkbox" id="leather" name="leather" value="leather">
-                        <label for="leather">Asientos Cuero Reforzado</label>
-                    </p>   
+                        <input type="checkbox" id="leather" name="extras" value="leather">
+                        <label for="leather">Asientos Cuero Reforzado</label>  
+                    </div> 
                 </div>
                 <div class="col-2 center">
                     <button id="create" onclick="createCar()">FABRICAR</button>             
                 </div>
                 <div class="col-6 center">
-                    <p id="out">salida</p>
+                    <p id="out"></p>
                 </div>
-
+            </div>
         </div>
 
         <div id="tabs-2">
@@ -72,8 +72,10 @@
         </div>
 
         <div id="tabs-3">
-
+            <p id="out2"></p>    
         </div>
+
+        
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

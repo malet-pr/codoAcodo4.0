@@ -1,7 +1,7 @@
 "use strict";
 const prompt = require('prompt-sync')({sigint:true});  
-const car = require('./Car.js');
-const luxuryCar = require('./LuxuryCar.js');
+const car = require('./clases/Car.js');
+const luxuryCar = require('./clases/LuxuryCar.js');
 
 console.log('\n------------------------------------------------------------------------\n');
 

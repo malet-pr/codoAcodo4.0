@@ -103,15 +103,6 @@ class Car {
         console.log(`De acuerdo a las pruebas realizadas, el auto es ${this.apto==true ? "apto." : "no apto."}`)
     }
 
-    probarAutoParaFront(encenderMotor,apagarMotor,mover,frenar,acelerar,encenderLuces,apagarLuces,tocarBocina){
-        if(encenderMotor && apagarMotor && mover && frenar && acelerar && encenderLuces && apagarLuces && tocarBocina){
-            this.aptu = true;
-        } else {
-            this.apto = false;
-        }
-        this.probado = true;
-    }
-
     carList = [];
 
     agregarAuto(carList){
@@ -166,9 +157,6 @@ Fue fabricado el ${this.fabricado.toLocaleDateString('es-AR', options)}, a las $
         if(this.fabricado > other.fabricado) return 1;
         return 0;
     }
-
-
-
 
 }
 
