@@ -9,7 +9,8 @@ header {
 }
 main {
     background-color:bisque;
-    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 main h1, h2, h3, h4 {
     font-family: 'Lato';
@@ -20,7 +21,6 @@ main p, a, ul, li, ol, td, input, button {
 }
 main section {
     padding-top: 1em;
-	scroll-margin-top: 9rem; /* mediaquery 20rem */
 }
 main section .accordion-item {
     background-color: bisque;
@@ -43,5 +43,95 @@ footer{
     color: black;
 }
 
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
 
-/* TODO: agregar todos los mediaquery para hacerla responsiva */
+/*----------- mantener esto al final ------------------*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #video{ content-visibility: hidden;}
+    #image{ content-visibility: hidden;}
+    [class*="col-"] {width: 100%;}
+    .card {margin-left: auto; margin-right: auto;}
+    footer {padding: 1rem;}
+    main section {scroll-margin-top: 20rem;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .col-1 {width: 50%;}
+    .col-2 {width: 50%;}
+    .col-3 {width: 50%;}
+    .col-4 {width: 50%;}
+    .col-5 {width: 50%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 100%;}
+    .col-8 {width: 100%;}
+    .col-9 {width: 100%;}
+    .col-10 {width: 100%;}
+    .col-11 {width: 100%;}
+    .col-12 {width: 100%;}
+    .card {margin-left: auto; margin-right: auto;}
+    footer {padding-bottom: 1rem;}
+    main section {scroll-margin-top: 20rem;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .col-1 {width: 33.33%;}
+    .col-2 {width: 33.33%;}
+    .col-4 {width: 50%;}
+    .col-4 {width: 50%;}
+    .col-5 {width: 50%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 50%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 66.66%;}
+    .col-10 {width: 100%;}
+    .col-11 {width: 100%;}
+    .col-12 {width: 100%;}
+    .card {margin-left: auto; margin-right: auto;}
+    footer {padding-bottom: 1rem;}
+    main section {scroll-margin-top: 20rem;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .col-1 {width: 25%;}
+    .col-2 {width: 25%;}
+    .col-3 {width: 33.33%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 33.33%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 50%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 66.66%;}
+    .col-10 {width: 100%;}
+    .col-11 {width: 100%;}
+    .col-12 {width: 100%;}
+    main section {scroll-margin-top: 9rem;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    main section {scroll-margin-top: 9rem;}
+} 
+

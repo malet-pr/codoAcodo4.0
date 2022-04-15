@@ -43,13 +43,13 @@
         <!-- section1: 2 col, video, intro(text) -->
         <section id="intro" >
             <div class="row align-items-center">
-                <div class="col-4">
+                <div class="col-4" id="video">
                     <video width="100%" height="auto" autoplay loop muted>
                         <source src="media/videoIntro.mp4" type="video/mp4">
                       Your browser does not support the video tag
                     </video>
                 </div>
-                <div class="col-8">
+                <div class="col-8" id = intro-text>
                     <h3>What We Do</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis esse labore molestias quos necessitatibus fugit ducimus iste assumenda in dolorem enim, modi suscipit ea voluptatem facere quisquam est, sit ipsam?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis esse labore molestias quos necessitatibus fugit ducimus iste assumenda in dolorem enim, modi suscipit ea voluptatem facere quisquam est, sit ipsam?</p>
@@ -70,7 +70,7 @@
                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="row align-items-center">
-                            <div class="col-3">
+                            <div class="col-3" id="image">
                                 <img src="img/dataAnalytics.png" alt="Data Analytics Image" width="85%" height="auto">
                             </div>
                             <div class="col-9">
@@ -88,7 +88,7 @@
                   <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="row align-items-center">
-                            <div class="col-3">
+                            <div class="col-3" id="image">
                                 <img src="img/predictiveAnalysis.jpg" alt="Predictive Analysis Image" width="85%" height="auto">
                             </div>
                             <div class="col-9">
@@ -106,7 +106,7 @@
                   <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="row align-items-center">
-                            <div class="col-3">
+                            <div class="col-3" id="image">
                                 <img src="img/machineLearning.jpg" alt="Machine Learning Image" width="85%" height="auto">
                             </div>
                             <div class="col-9">
@@ -169,10 +169,10 @@
             <h3>Contact Us</h3>
             <div class="row align-items-center">
                 <div class="col-9">
-                    <article class="formulario">
+                    <article class="formulario" style="float:right;">
                         <form action="">
-                            <div class="row  align-items-center">
-                            <div class="col-5">
+                            <div class="row">
+                            <div class="col-4">
                             <p>
                                 <label for="lastName">Last Name</label>
                                 <input type="text" id="lastName" name="lastName" placeholder="Last Name">  <br> <br>
@@ -187,8 +187,8 @@
                                 <input type="email" id="email" name="email"> <br><br>
                             </p>
                             </div>
-                            <div class="col-4">
-                            <p> Menssage<br>
+                            <div class="col-5" id="texto">
+                            <p> Mensaje<br>
                                 <textarea name="message" rows="10" cols="50" style="padding: 5px;"></textarea>
                             </p>  
                             <p>
@@ -222,8 +222,8 @@
             <div class="col-4">
                 <p>All rights reserved &copy 2022</p>
             </div>
-            <div class="col-6"></div>
-            <div class="col-2" >
+            <div class="col-5"></div>
+            <div class="col-3" >
                 <i class="bi-github" style="padding:1rem;"></i>
                 <i class="bi-linkedin" style="padding:1rem;"></i>
                 <i class="bi-twitter" style="padding:1rem;"></i>
