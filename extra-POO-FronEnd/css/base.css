@@ -28,10 +28,12 @@ p, a, ul, li, ol, td, input, button {
     font-weight: 400;
     color: black;
 }
+a {
+    text-decoration: none;
+}
 .center {
     text-align: center;
 }
-
 button {
     padding: .5rem .75rem;
     background-color: var(--accentColor);
@@ -97,28 +99,12 @@ ol li{
     cursor:pointer; 
 }
 
-/* INTENTO DE DAR ESTILO PERSONAL A TOOLTIP - NO FUNCIONA */
-/* Tooltip container */
-.tooltip {
-    position: relative;
-    display: inline-block;
+/* PERSONALIZACIÓN DE LOS SELECT - no se puede cambiar el azul de hover*/
+select{
+    border-radius:4px;
 }
-/* Tooltip text */
-.tooltip:after {
-    position: absolute;
-    top: -30px;
-    right: 0;
-    left: 0;
-    display: none;
-    text-align: center;
-    background-color: var(--accentColor);
-    color: white;
-    border-radius: 4px;
-    padding: 2px;
-  }
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+select:focus {
+    outline: var(--accentColor) solid 2px; 
 }
 
 /* ESTILO PERSONAL PARA LOS CHECKBOX */
@@ -172,3 +158,14 @@ ol li{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+.tooltip-style{
+    background: var(--accentColor);
+    color: white;
+    max-width: 12em;
+}
+#targetElement {
+    min-height: 35vh;
+    margin: 50px;
+}
+

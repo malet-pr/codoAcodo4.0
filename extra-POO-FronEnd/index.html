@@ -62,6 +62,7 @@
                     </div> 
                 </div>
                 <div class="col-2 center">
+                    <br>
                     <button id="clean" onclick="cleanCar()">LIMPIAR</button>  
                     <br>
                     <button id="create" onclick="createCar()">FABRICAR</button>             
@@ -134,7 +135,14 @@
         </div>
 
         <div id="tabs-3">
-            <ol id="list"></ol>
+            <div class="row">
+                <div class="col-6">
+                    <ol id="list"></ol>
+                </div>
+                <div class="col-6">
+                    <div id="targetElement"></div>
+                </div>    
+            </div>
         </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

@@ -2,6 +2,10 @@
 
 $(function() {$("#tabs").tabs();});
 $(function() {$("#tabs")>$("#tab-3")>$("#list")>$("li").tooltip()});
+$(document).tooltip({
+    tooltipClass: "tooltip-style",
+    position: { my: "top left", at: "top left", of: "#targetElement"}
+});
 
 var carList = [];
 var completeCarList = [];
