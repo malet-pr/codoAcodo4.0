@@ -26,6 +26,11 @@ function updateBrand(){
     return option;
 }
 
+function cleanCar(){
+    document.getElementById('out1').innerHTML = "";
+    $('input[name="extras"]:checked').prop('checked', false);
+}
+
 function createCar(){
     let w = updateWheels();
     let d = updateDoors();
@@ -78,6 +83,8 @@ $(function() {
       $('.tests input:checkbox').prop('checked', false);
     });
 });
+
+// CLASES
 class Car {
 
     constructor(cantidadRuedas,cantidadPuertas,marcaDestino) {

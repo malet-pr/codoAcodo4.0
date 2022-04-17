@@ -48,17 +48,22 @@
                 </select>
             </div>
             <div class="row align-items-center" style="margin-top:2rem;">
-                <div class="col-4 center">
-                    <h5>EXRAS</h5>
-                    <div class=container id="extras" style="text-align:center;">
-                        <input type="checkbox" id="roof" name="extras" value="roof">
-                        <label for="roof">Techo Corredizo</label>
-                        <br>
-                        <input type="checkbox" id="leather" name="extras" value="leather">
-                        <label for="leather">Asientos Cuero Reforzado</label>  
+                <div class="col-4">
+                    <h5 class="center">EXRAS</h5>
+                    <div class=container id="extras" >
+                        <label class="container2" id="roof">Techo Corredizo
+                            <input type="checkbox"id="roof" name="extras" value="roof">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2" id="leather">Asientos Cuero Reforzado
+                            <input type="checkbox"id="leather" name="extras" value="leather">
+                            <span class="checkmark"></span>
+                        </label>
                     </div> 
                 </div>
                 <div class="col-2 center">
+                    <button id="clean" onclick="cleanCar()">LIMPIAR</button>  
+                    <br>
                     <button id="create" onclick="createCar()">FABRICAR</button>             
                 </div>
                 <div class="col-6 center">
@@ -77,29 +82,38 @@
                 </div>
                 <div class="col-4"> 
                     <form class="tests">
-                        <input type="checkbox" id="t1" name="test-item" value="t1">
-                        <label for="t1">Encender el motor</label>
-                        <br>
-                        <input type="checkbox" id="t2" name="test-item" value="t2">
-                        <label for="t2">Apagar el motor</label>
-                        <br>
-                        <input type="checkbox" id="t3" name="test-item" value="t3">
-                        <label for="t3">Poner el auto en movimiento</label>
-                        <br>
-                        <input type="checkbox" id="t4" name="test-item" value="t4">
-                        <label for="t4">Frenar el auto</label>
-                        <br>
-                        <input type="checkbox" id="t5" name="test-item" value="t5">
-                        <label for="t5">Acelerar de 0 a 50 km/h</label>
-                        <br>
-                        <input type="checkbox" id="t6" name="test-item" value="t6">
-                        <label for="t6">Enceder las luces</label>
-                        <br>
-                        <input type="checkbox" id="t7" name="test-item" value="t7">
-                        <label for="t7">Apagar las luces</label>
-                        <br>
-                        <input type="checkbox" id="t8" name="test-item" value="t8">
-                        <label for="t8">Tocar la bocina</label>
+                        <label class="container2" id="t1">Encender el motor
+                            <input type="checkbox"id="t1" name="test-item" value="t1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2" id="t2">Apagar el motor
+                            <input type="checkbox"id="t2" name="test-item" value="t2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2" id="t3">Poner el auto en movimiento
+                            <input type="checkbox"id="t3" name="test-item" value="t3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2" id="t4">Frenar el auto
+                            <input type="checkbox"id="t4" name="test-item" value="t4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2" id="t5">celerar de 0 a 50 km/h
+                            <input type="checkbox"id="t5" name="test-item" value="t5">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2" id="t6">Enceder las luces
+                            <input type="checkbox"id="t6" name="test-item" value="t6">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2" id="t7">Apagar las luces
+                            <input type="checkbox"id="t7" name="test-item" value="t7">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2" id="t8">Tocar la bocina
+                            <input type="checkbox"id="t8" name="test-item" value="t8">
+                            <span class="checkmark"></span>
+                        </label>
                     </form>
                     <br>
                     <div class="row">
@@ -117,7 +131,6 @@
                     <p id="out2"></p>
                 </div>
             </div>
-
         </div>
 
         <div id="tabs-3">

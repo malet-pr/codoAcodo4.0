@@ -5,7 +5,7 @@
     --primaryColor: green;
     --primaryLight: lightgreen;
     --primaryDark: darkgreen;
-    --secondaryColor: gray;
+    --secondaryColor: darkgray;
     --accentColor: darkred;
 }
 *, *::before, *::after {
@@ -26,6 +26,7 @@ h3, h4, h5 {
 p, a, ul, li, ol, td, input, button {
     font-family: 'Montserrat';
     font-weight: 400;
+    color: black;
 }
 .center {
     text-align: center;
@@ -70,17 +71,18 @@ button:hover{
     margin-left: auto;
     margin-right: auto;
     max-width: fit-content;
+    min-width: 250px;
     background-color: var(--secondaryColor);
-    color: white;
-    padding: 1rem 2rem;
+    color: black;
+    padding: 1rem 0.5rem;
     border: 3px solid var(--primaryDark);
     border-radius: 4px;
 }
 .tests {
     max-width: fit-content;
     background-color: var(--secondaryColor);
-    color: white;
-    padding: 1rem;
+    color: black;
+    padding: 1rem 2rem;
     border: 3px solid var(--primaryDark);
     border-radius: 4px;
 }
@@ -91,9 +93,82 @@ button:hover{
 #out2{
     font-weight: 600;
 }
-#list{
-    color: black;
-}
 ol li{
     cursor:pointer; 
+}
+
+/* INTENTO DE DAR ESTILO PERSONAL A TOOLTIP - NO FUNCIONA */
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+/* Tooltip text */
+.tooltip:after {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+    background-color: var(--accentColor);
+    color: white;
+    border-radius: 4px;
+    padding: 2px;
+  }
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* ESTILO PERSONAL PARA LOS CHECKBOX */
+/* Contenedor */
+.container2 {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 1.5rem;
+}  
+/* escondemos el default checkbox */
+.container2 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/* creamos un custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: var(--secondaryColor);
+}
+/* Al pasar el mouse encima, lo ponemos gris */
+.container2:hover input ~ .checkmark {
+    background-color: var(--primaryLight);
+}
+/* creamos el marcador (escondido al no seleccionar) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* mostramos el marcador al seleccionar */
+.container2 input:checked ~ .checkmark:after {
+    display: block;
+}
+/* estilo del marcador */
+.container2 .checkmark:after {
+    left: 4px;
+    top: 0px;
+    width: 8px;
+    height: 13px;
+    border: solid var(--accentColor);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
