@@ -36,19 +36,27 @@ function cleanCar(){
 }
 
 function createCar(){
+    let equiped = '';
     let w = updateWheels();
     let d = updateDoors();
     let b = updateBrand();
     let checkedValues = $('input[name="extras"]:checked').map((i, el) => el.value).get();
     if(checkedValues.length==2){
         v = new LuxuryCar(w,d,b);
+        equiped = ' Vehículo de alta gama.'
     } else {
         v = new Car(w,d,b);
+        if(checkedValues[0] == 'roof'){
+            equiped = ' Está equipado con techo corredizo.'
+        }
+        if(checkedValues[0] == 'leather'){
+            equiped = ' Está Equipado con asientos de cuero reforzado.'
+        }
     }
     v.agregarAuto(carList);
     completeCarList.push(v);
-    document.getElementById('out1').innerHTML = v.toString();
-    $("#tabs")>$("#tab-3")>$("#list").append(`<a href="#" title="${v.toString()}"><li id=car${n}>${carList[n]}</li></a>`);
+    document.getElementById('out1').innerHTML = v.toString() + equiped;
+    $("#tabs")>$("#tab-3")>$("#list").append(`<a href="#" title="${v.toString() + equiped}"><li id=car${n}>${carList[n]}</li></a>`);
     $('#cars').append($('<option>').val(n).text(String(n+1) + '-' + carList[n]));
     n = n + 1;
 }
