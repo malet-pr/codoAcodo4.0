@@ -10,3 +10,4 @@ Ejercicios del curso
 6. [nivelación bootstrap](/nivelacion-bootstrap)
 7. [nivelación javascript POO](/nivelacion-javascript-poo)
 8. [extra POO con FrontEnd](/extra-POO-FronEnd)
+9. [consumo de API](/api)
