@@ -5,7 +5,6 @@
 
 .TareasItem-p--completado{
     text-decoration: line-through;
-    color:rgba(23, 182, 36, 0.836);
 }
 
 .Icon-check{
@@ -18,7 +17,7 @@
     font-weight: 500;
 }
 
-.Icon-check--active{
+.Icon-check--completado{
     color: rgba(23, 182, 36, 0.836);
     font-weight: 900;
 }
