@@ -21,11 +21,11 @@ const App = () => {
 <TareasBuscador/>
 <p></p>
 <TareasLista>
-  {tareas.map(tareas =>(
+  {tareas.map(tarea =>(
       <TareasItem
-          key= {tareas.id}
-          nombre= {tareas.nombre}
-          completado = {tareas.completado}
+          key= {tarea.id}
+          nombre= {tarea.nombre}
+          completado = {tarea.completado}
       />
   ))}
 </TareasLista>
