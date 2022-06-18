@@ -11,3 +11,5 @@ Ejercicios del curso
 7. [nivelación javascript POO](/nivelacion-javascript-poo)
 8. [extra POO con FrontEnd](/extra-POO-FronEnd)
 9. [consumo de API](/api)
+10.[licuadora](/Licuadora)
+11.[tp individual](/tp-individual/)

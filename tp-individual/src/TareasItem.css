@@ -1,0 +1,21 @@
+    
+.TareasItem-p{
+    font-size: 18px;
+}
+
+.TareasItem-p--completado{
+    text-decoration: line-through;
+}
+  
+.Icon-check--active{
+    color: rgba(23, 182, 36, 0.836);
+    font-weight: 900;
+}
+
+.Icon-delete{
+    right: 0;
+}
+
+.Icon-delete:hover{
+    color:  red;
+}
