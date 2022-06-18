@@ -1,6 +1,8 @@
 import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
-import "./TareasItem.css"
+import {IoCheckmarkSharp,IoCloseCircleOutline} from "react-icons/io5";
+import "./TareasItem.css";
+
 
 function TareasItem(props) {
 
@@ -13,16 +15,16 @@ function TareasItem(props) {
   }
 
   return [
-    <ListGroup.Item  className="d-flex justify-content-between align-items-start item" variant="primary" >
+    <ListGroup.Item  className="d-flex justify-content-between align-items-start" id="stripped" >
       
       <span className={`Icon Icon-check ${props.completado &&'Icon-check--active'}`} onClick={onCompletado}>
-        √
+        <IoCheckmarkSharp/>
       </span>
       <p className={`TareasItem-p ${props.completado && 'TareasItem-p--completado'}`}>
         {props.nombre} 
       </p> 
       <span className="Icon Icon-delete" onClick={onBorrado}>
-        X
+       <IoCloseCircleOutline/>
       </span>
     </ListGroup.Item>
   ];

@@ -1,6 +1,8 @@
-import React from 'react'
-import "./CrearTareasBoton.css"
+import React from 'react';
+import "./CrearTareasBoton.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {IoAddSharp} from "react-icons/io5";
+
 
 function CrearTareasBoton() {
 
@@ -10,7 +12,7 @@ function CrearTareasBoton() {
 
   return (<button className="CrearTareasBoton" 
   onClick={() => onClickBoton ("Acá se deberia abrir el modal")}>
-  + </button>)
+  <IoAddSharp/> </button>)
 
 }
 

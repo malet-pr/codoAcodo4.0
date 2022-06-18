@@ -4,6 +4,7 @@ import {TareasBuscador} from "./TareasBuscador"
 import {TareasLista} from "./TareasLista"
 import {TareasItem} from "./TareasItem"
 import {CrearTareasBoton} from "./CrearTareasBoton"
+import './App.css';
 
 const tareas = [
   {id:0, nombre: "Estudiar React", completado: true},

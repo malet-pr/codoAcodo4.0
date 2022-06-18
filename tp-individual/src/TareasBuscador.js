@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
+import "./TareasBuscador.css"
 
 const TareasBuscador = ()=> {
   const [valorBuscador,setvalorBuscador] = React.useState("");
@@ -11,7 +12,7 @@ const TareasBuscador = ()=> {
     <Form>
       <Form.Control size="lg" type="text" 
         id="tareasBuscador" 
-        placeholder = "Título de la Nota"
+        placeholder = "BUSCAR NOTA"
         value={valorBuscador}
         onChange={onBuscadorCambio}/> 
     </Form>
