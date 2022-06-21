@@ -2,9 +2,9 @@ import React from 'react'
 import "./TareasContador.css"
 
 
-const TareasContador =() => {
+const TareasContador =({completas,totales}) => {
   return (
-<h2 className="TareasContador">Completaste 2 de 3 tareas</h2>
+<h2 className="TareasContador">Completaste {completas} de {totales} tareas</h2>
   );
 }
 

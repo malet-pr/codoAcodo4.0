@@ -2,8 +2,7 @@ import React from 'react'
 import Form from 'react-bootstrap/Form';
 import "./TareasBuscador.css"
 
-const TareasBuscador = ()=> {
-  const [valorBuscador,setvalorBuscador] = React.useState("");
+const TareasBuscador = ({valorBuscador,setvalorBuscador})=> {
   const onBuscadorCambio = (event) =>{
     console.log (event.target.value)
     setvalorBuscador(event.target.value)
